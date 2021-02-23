@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="image_slider_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kvj-V4-R59">
+                                <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="1cl-YF-gmj"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0JT-Yb-2ab">
+                                    <size key="itemSize" width="413" height="255"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="sliderCell" id="1xU-dY-OaD" customClass="SliderCollectionViewCell" customModule="image_slider_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-2.5" width="413" height="255"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Cj-CL-aJ9">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="255"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-ZY-t0u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="255"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Hfm-ZY-t0u" secondAttribute="bottom" id="7ra-tE-ZW8"/>
+                                                <constraint firstItem="Hfm-ZY-t0u" firstAttribute="leading" secondItem="4Cj-CL-aJ9" secondAttribute="leading" id="QGg-iC-Zw2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hfm-ZY-t0u" secondAttribute="trailing" id="bby-oq-urn"/>
+                                                <constraint firstItem="Hfm-ZY-t0u" firstAttribute="top" secondItem="4Cj-CL-aJ9" secondAttribute="top" id="fkp-tC-Rlk"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="255"/>
+                                        <connections>
+                                            <outlet property="teamLogo" destination="Hfm-ZY-t0u" id="hXd-dv-IyF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vut-hg-y6e"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dTO-Y4-9NO"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-xL-AjC">
+                                <rect key="frame" x="20" y="261" width="374" height="28"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="kvj-V4-R59" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="22K-0m-LiT"/>
+                            <constraint firstItem="oSh-xL-AjC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QfN-dH-7Ic"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oSh-xL-AjC" secondAttribute="trailing" constant="20" id="SUi-Bn-gVv"/>
+                            <constraint firstItem="oSh-xL-AjC" firstAttribute="bottom" secondItem="kvj-V4-R59" secondAttribute="bottom" constant="-5" id="YOP-GD-PGS"/>
+                            <constraint firstItem="kvj-V4-R59" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v0l-40-qoe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvj-V4-R59" secondAttribute="trailing" id="xQU-yz-Ogt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageSliderCollectionView" destination="kvj-V4-R59" id="swM-0f-GqV"/>
+                        <outlet property="sliderPageControl" destination="oSh-xL-AjC" id="jlN-YF-ePU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.53623188405798" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
